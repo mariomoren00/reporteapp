@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Reportes
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item *ngIf="reports.length == 0"> 
+    Sin datos
+  </ion-item>
+
+  <ion-card *ngFor="let item of reports; let i = index">
+    <div class="card-img">
+      <img [src]="item.imagen" *ngIf="item.imagen"/>        
+      <ion-fab left top>
+        <button ion-fab color="primary" (click)="action(item, i)">
+          <ion-icon name="more"></ion-icon>
+        </button>
+      </ion-fab>
+    </div>
+    <ion-card-content>
+      <ion-card-title>
+        {{item.titulo}}
+      </ion-card-title>
+      <p>
+        {{item.descripcion}}
+      </p>
+    </ion-card-content>
+    <ion-item actions>
+      <span ion-text item-end color="danger">02/12/17</span>
+    </ion-item>
+  </ion-card>
+
+  <ion-fab right bottom>
+    <button ion-fab color="danger" (click)="create()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+</ion-content>
