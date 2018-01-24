@@ -7,6 +7,13 @@ Aplicación móvil para reportes creado en Ionic usando sqlite
 npm install
 ```
 
+### Add platform 
+
+```bash
+ionic cordova platform add android
+```
+
+
 ### Running 
 
 ```bash
